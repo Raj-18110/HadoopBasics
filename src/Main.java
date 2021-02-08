@@ -22,6 +22,7 @@ public class Main extends Configured implements Tool {
     public int run(String[] strings) throws Exception{
         Configuration configuration = this.getConf();
 
+        // Added comment just to make a change in the file
         Job job = Job.getInstance(configuration);
         job.setJobName("ViewCount");
         job.setJarByClass(Main.class);
