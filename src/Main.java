@@ -27,11 +27,14 @@ public class Main extends Configured implements Tool {
         job.setJobName("ViewCount");
         job.setJarByClass(Main.class);
 
+        job.setNumReduceTasks(2);
+
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
         job.setMapperClass(Map.class);
         job.setReducerClass(Reduce.class);
+        job.setCombinerClass(Reduce.class);
 
         Path inputFilePath = new Path(strings[0]);
         Path outputFilePath = new Path(strings[1]);
